@@ -1,6 +1,7 @@
 package com.example.exceptionhandler;
 
 import com.example.exceptionhandler.exception.ControllerAdviceException;
+import com.example.exceptionhandler.exception.ResponseStatusException;
 import com.example.exceptionhandler.exception.ResponseStatusInAdviceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,4 +22,10 @@ public class ControllerAdvice {
     public ResponseEntity<ErrorResponse> handleResponseStatusInAdviceException() {
         return ResponseEntity.notFound().build();
     }
+
+    //TODO: 탐구과제 6번
+//    @ExceptionHandler(ResponseStatusException.class)
+//    public ResponseEntity<ErrorResponse> handleResponseStatusException() {
+//        return ResponseEntity.badRequest().body(new ErrorResponse("Handle ResponseStatusException"));
+//    }
 }
